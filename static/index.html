@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Interactive Web Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            transition: background-color 1s;
-        }
-        .btn {
-            font-size: 2rem;
-            padding: 10px 20px;
-        }
-    </style>
+    <title>Create Package</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    <button class="btn btn-primary" id="colorButton">Change Background Color</button>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        document.getElementById('colorButton').addEventListener('click', function() {
-            document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-        });
-    </script>
+<div class="container py-5">
+    <h1 class="text-center mb-4">Create TRIRIGA OMP </h1>
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <form id="ompForm" actacaaion="/create-package" method="post">
+            <div class="form-group">
+                <label for="uname">Username:</label>
+                <input type="text" class="form-control" id="username" name="username">
+            </div>
+            <div class="form-group">
+              <label for="pass">Password:</label>
+              <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="pname">Package Name:</label>
+                <input type="text" class="form-control" id="packageName" name="packageName">
+            </div>
+            <div class="form-group">
+                <label for="url">Environment URL:</label>
+                <input type="text" class="form-control" id="environment" name="environment">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
